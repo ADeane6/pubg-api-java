@@ -1,21 +1,17 @@
 package me.adeane6;
 
 import me.adeane6.model.ApiStatus;
-import me.adeane6.model.Endpoints;
 import me.adeane6.model.Shard;
+import me.adeane6.model.Telemetry.Event.EventBase;
+import me.adeane6.model.Telemetry.Telemetry;
 import me.adeane6.model.match.MatchWrapper;
 import me.adeane6.model.player.Player;
 import me.adeane6.model.status.Status;
 import me.adeane6.model.wrapper.Data;
-import me.adeane6.model.wrapper.ResponseData;
 import me.adeane6.model.wrapper.ResponseDataList;
 import me.adeane6.util.GeneralUtil;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -25,7 +21,7 @@ public class PUBGApi {
 
     private final String API_KEY;
 
-    protected PUBGInterface pubgInterface;
+    private PUBGInterface pubgInterface;
 
     public PUBGApi(String API_KEY) {
         this.API_KEY = API_KEY;
@@ -55,6 +51,12 @@ public class PUBGApi {
 
     public MatchWrapper getMatch(Shard shard, String id) {
         return GeneralUtil.getResponse(pubgInterface.getMatch(shard.toString(), id));
+    }
+
+    public Telemetry getTelemetry(MatchWrapper match) {
+        List<EventBase> telemetryEvents = GeneralUtil.getResponse(pubgInterface.getTelemetry(match.getTelemetryUrl()));
+
+        return new Telemetry(telemetryEvents);
     }
 
 }

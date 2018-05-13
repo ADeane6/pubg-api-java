@@ -1,20 +1,16 @@
-package com.github.mautini.pubgjava.model.telemetry;
+package me.adeane6.model.Telemetry;
 
-import com.github.mautini.pubgjava.model.telemetry.event.TelemetryEvent;
-import com.github.mautini.pubgjava.model.telemetry.event.TelemetryEvent;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import me.adeane6.model.Telemetry.Event.EventBase;
 
 import java.util.List;
 
+@Getter
+@AllArgsConstructor
 public class Telemetry {
 
-    private final List<TelemetryEvent> telemetryEvents;
-
-    public Telemetry(List<TelemetryEvent> telemetryEvents) {
-        this.telemetryEvents = telemetryEvents;
-    }
-
-    public List<TelemetryEvent> getTelemetryEvents() {
-        return telemetryEvents;
-    }
+    private final List<EventBase> telemetryEvents;
 
 }
