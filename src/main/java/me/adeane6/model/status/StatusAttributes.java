@@ -4,13 +4,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
 public class StatusAttributes {
 
-    private ZonedDateTime releasedAt;
+    private OffsetDateTime releasedAt;
     private String version;
 }

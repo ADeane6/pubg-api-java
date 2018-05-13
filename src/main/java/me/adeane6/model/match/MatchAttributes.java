@@ -6,13 +6,13 @@ import lombok.Setter;
 import me.adeane6.model.GameMode;
 import me.adeane6.model.Map;
 
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
 public class MatchAttributes {
 
-    private ZonedDateTime createdAt;
+    private OffsetDateTime createdAt;
     private Integer duration;
     private GameMode gameMode;
     private String patchVersion;

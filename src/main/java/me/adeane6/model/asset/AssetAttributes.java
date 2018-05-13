@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
@@ -14,7 +14,7 @@ public class AssetAttributes {
 
     @SerializedName("URL")
     private String url;
-    private ZonedDateTime createdAt;
+    private OffsetDateTime createdAt;
     private String description;
     private String name;
 }

@@ -36,7 +36,7 @@ public interface PUBGInterface {
     Call<Data<Status>> getStatus();
 
     @GET(Endpoints.MATCH_PATH)
-    Call<MatchWrapper> getMatch(@Path("shard") String shard, @Path("id") String id);
+    Call<MatchWrapper> getMatch(@Path("shard") String shard, @Path("matchId") String id);
 
     @GET
     Call<List<EventBase>> getTelemetry(@Url String url);

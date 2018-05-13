@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import me.adeane6.model.Telemetry.object.Common;
 
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
@@ -15,7 +15,7 @@ public abstract class EventBase {
     @SerializedName("_V")
     private Integer version;
     @SerializedName("_D")
-    private ZonedDateTime timestamp;
+    private OffsetDateTime timestamp;
     @SerializedName("_T")
     private String type;
     private Common common;

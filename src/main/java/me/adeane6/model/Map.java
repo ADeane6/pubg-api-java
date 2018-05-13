@@ -4,9 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import lombok.*;
 
 @Getter
-@Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public enum Map {
     @SerializedName("Desert_Main") DESERT_MAIN,
     @SerializedName("Erangel_Main") ERANGEL_MAIN,

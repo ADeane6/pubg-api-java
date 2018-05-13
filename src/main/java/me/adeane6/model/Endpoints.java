@@ -4,7 +4,7 @@ package me.adeane6.model;
  * Created by ashley on 05/04/2018.
  */
 public class Endpoints {
-    private static final String BASE ="https://api.playbattlegrounds.com";
+    public static final String BASE ="https://api.playbattlegrounds.com";
     private static final String STATUS = "/status";
     private static final String SHARD = "/shards/{shard}";
     private static final String PLAYERS = "/players";
