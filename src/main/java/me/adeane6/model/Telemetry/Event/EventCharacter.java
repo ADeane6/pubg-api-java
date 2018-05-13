@@ -2,18 +2,18 @@ package me.adeane6.model.Telemetry.Event;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.adeane6.model.Telemetry.object.CharacterObj;
+import me.adeane6.model.Telemetry.object.Character;
 
 /**
  * TelemetryEvent including a character
  */
 @Setter
 @Getter
-public abstract class Character extends EventBase {
+public abstract class EventCharacter extends EventBase {
 
-    private CharacterObj character;
+    private Character character;
 
-    public Character() {
+    public EventCharacter() {
         super();
     }
 }

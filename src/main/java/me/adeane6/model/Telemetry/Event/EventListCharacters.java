@@ -2,6 +2,7 @@ package me.adeane6.model.Telemetry.Event;
 
 import lombok.Getter;
 import lombok.Setter;
+import me.adeane6.model.Telemetry.object.Character;
 
 import java.util.List;
 
@@ -10,11 +11,11 @@ import java.util.List;
  */
 @Getter
 @Setter
-public abstract class ListCharacters extends EventBase {
+public abstract class EventListCharacters extends EventBase {
 
     private List<Character> characters;
 
-    public ListCharacters() {
+    public EventListCharacters() {
         super();
     }
 }

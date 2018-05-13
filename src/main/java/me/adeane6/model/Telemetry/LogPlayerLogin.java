@@ -2,11 +2,11 @@ package me.adeane6.model.Telemetry;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.adeane6.model.Telemetry.Event.Account;
+import me.adeane6.model.Telemetry.Event.EventAccount;
 
 @Getter
 @Setter
-public class LogPlayerLogin extends Account {
+public class LogPlayerLogin extends EventAccount {
 
     private Boolean result;
     private String errorMessage;

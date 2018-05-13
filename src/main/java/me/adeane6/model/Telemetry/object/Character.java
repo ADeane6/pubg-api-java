@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class CharacterObj {
+public class Character {
 
     private String name;
     private String teamId;

@@ -1,8 +1,8 @@
 package me.adeane6.model.Telemetry;
 
-import me.adeane6.model.Telemetry.Event.CharacterVehicle;
+import me.adeane6.model.Telemetry.Event.EventCharacterVehicle;
 
-public class LogVehicleRide extends CharacterVehicle {
+public class LogVehicleRide extends EventCharacterVehicle {
 
     public LogVehicleRide() {
         super();

@@ -1,8 +1,8 @@
 package me.adeane6.model.Telemetry;
 
-import me.adeane6.model.Telemetry.Event.CharacterItem;
+import me.adeane6.model.Telemetry.Event.EventCharacterItem;
 
-public class LogItemDrop extends CharacterItem {
+public class LogItemDrop extends EventCharacterItem {
 
     public LogItemDrop() {
         super();

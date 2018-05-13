@@ -9,11 +9,11 @@ import me.adeane6.model.Telemetry.object.Vehicle;
  */
 @Getter
 @Setter
-public abstract class CharacterVehicle extends EventBase {
+public abstract class EventCharacterVehicle extends EventBase {
 
     private Vehicle vehicle;
 
-    public CharacterVehicle() {
+    public EventCharacterVehicle() {
         super();
     }
 }

@@ -9,11 +9,11 @@ import me.adeane6.model.Telemetry.object.ItemPackage;
  */
 @Getter
 @Setter
-public abstract class Package extends EventBase {
+public abstract class EventPackage extends EventBase {
 
     private ItemPackage itemPackage;
 
-    public Package() {
+    public EventPackage() {
         super();
     }
 

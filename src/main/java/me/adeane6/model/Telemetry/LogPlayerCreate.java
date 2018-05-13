@@ -1,8 +1,8 @@
 package me.adeane6.model.Telemetry;
 
-import me.adeane6.model.Telemetry.Event.Character;
+import me.adeane6.model.Telemetry.Event.EventCharacter;
 
-public class LogPlayerCreate extends Character {
+public class LogPlayerCreate extends EventCharacter {
 
     public LogPlayerCreate() {
         super();

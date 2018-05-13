@@ -9,11 +9,11 @@ import me.adeane6.model.Telemetry.object.Item;
  */
 @Getter
 @Setter
-public abstract class CharacterItem extends EventBase {
+public abstract class EventCharacterItem extends EventBase {
 
     private Item item;
 
-    public CharacterItem() {
+    public EventCharacterItem() {
         super();
     }
 }

@@ -8,11 +8,11 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public abstract class Account extends EventBase {
+public abstract class EventAccount extends EventBase {
 
     private String accountId;
 
-    public Account() {
+    public EventAccount() {
         super();
     }
 }

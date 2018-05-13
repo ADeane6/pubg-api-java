@@ -1,8 +1,8 @@
 package me.adeane6.model.Telemetry;
 
-import me.adeane6.model.Telemetry.Event.ListCharacters;
+import me.adeane6.model.Telemetry.Event.EventListCharacters;
 
-public class LogMatchEnd extends ListCharacters {
+public class LogMatchEnd extends EventListCharacters {
 
     public LogMatchEnd() {
         super();

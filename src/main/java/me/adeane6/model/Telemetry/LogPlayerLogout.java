@@ -1,8 +1,8 @@
 package me.adeane6.model.Telemetry;
 
-import me.adeane6.model.Telemetry.Event.Account;
+import me.adeane6.model.Telemetry.Event.EventAccount;
 
-public class LogPlayerLogout extends Account {
+public class LogPlayerLogout extends EventAccount {
 
     public LogPlayerLogout() {
         super();
