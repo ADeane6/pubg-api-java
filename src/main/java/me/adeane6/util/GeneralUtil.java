@@ -7,7 +7,7 @@ import me.adeane6.model.Endpoints;
 import me.adeane6.model.Entity;
 import me.adeane6.model.Telemetry.Event.EventBase;
 import me.adeane6.model.asset.Asset;
-import me.adeane6.model.match.Match;
+import me.adeane6.model.match.MatchData;
 import me.adeane6.model.participant.Participant;
 import me.adeane6.model.player.Player;
 import me.adeane6.model.roster.Roster;
@@ -22,7 +22,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.io.IOException;
 import java.time.Instant;
 import java.time.OffsetDateTime;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class GeneralUtil {
@@ -51,7 +50,7 @@ public class GeneralUtil {
                         case "player":
                             return context.deserialize(json, Player.class);
                         case "match":
-                            return context.deserialize(json, Match.class);
+                            return context.deserialize(json, MatchData.class);
                         case "status":
                             return context.deserialize(json, Status.class);
                         case "roster":

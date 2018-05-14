@@ -2,7 +2,7 @@ package me.adeane6;
 
 import me.adeane6.model.Endpoints;
 import me.adeane6.model.Telemetry.Event.EventBase;
-import me.adeane6.model.match.MatchWrapper;
+import me.adeane6.model.match.Match;
 import me.adeane6.model.player.Player;
 import me.adeane6.model.playerseason.PlayerSeason;
 import me.adeane6.model.season.Season;
@@ -36,7 +36,7 @@ public interface PUBGInterface {
     Call<Data<Status>> getStatus();
 
     @GET(Endpoints.MATCH_PATH)
-    Call<MatchWrapper> getMatch(@Path("shard") String shard, @Path("matchId") String id);
+    Call<Match> getMatch(@Path("shard") String shard, @Path("matchId") String id);
 
     @GET
     Call<List<EventBase>> getTelemetry(@Url String url);

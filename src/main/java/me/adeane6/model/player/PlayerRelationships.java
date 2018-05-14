@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import me.adeane6.model.asset.Asset;
-import me.adeane6.model.match.Match;
+import me.adeane6.model.match.MatchData;
 import me.adeane6.model.wrapper.DataList;
 
 @Getter
@@ -12,6 +12,6 @@ import me.adeane6.model.wrapper.DataList;
 @NoArgsConstructor
 public class PlayerRelationships {
 
-    private DataList<Match> matches;
+    private DataList<MatchData> matches;
     private DataList<Asset> assets;
 }

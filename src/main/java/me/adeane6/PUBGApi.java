@@ -4,12 +4,16 @@ import me.adeane6.model.ApiStatus;
 import me.adeane6.model.Shard;
 import me.adeane6.model.Telemetry.Event.EventBase;
 import me.adeane6.model.Telemetry.Telemetry;
-import me.adeane6.model.match.MatchWrapper;
+import me.adeane6.model.match.Match;
 import me.adeane6.model.player.Player;
+import me.adeane6.model.season.Season;
 import me.adeane6.model.status.Status;
 import me.adeane6.model.wrapper.Data;
+import me.adeane6.model.wrapper.ResponseData;
 import me.adeane6.model.wrapper.ResponseDataList;
 import me.adeane6.util.GeneralUtil;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,14 +53,27 @@ public class PUBGApi {
         return GeneralUtil.getResponse(pubgInterface.getPlayersByIds(shard.toString(), players));
     }
 
-    public MatchWrapper getMatch(Shard shard, String id) {
+    public Match getMatch(Shard shard, String id) {
         return GeneralUtil.getResponse(pubgInterface.getMatch(shard.toString(), id));
     }
 
-    public Telemetry getTelemetry(MatchWrapper match) {
+    public Telemetry getTelemetry(Match match) {
         List<EventBase> telemetryEvents = GeneralUtil.getResponse(pubgInterface.getTelemetry(match.getTelemetryUrl()));
 
         return new Telemetry(telemetryEvents);
+    }
+
+    public ResponseDataList<Season> getSeasons(Shard shard) {
+        return GeneralUtil.getResponse(pubgInterface.getSeasons(shard.toString()));
+    }
+
+    public ResponseData<Season> getLatestSeasonForPlayer(Shard shard, String playerId) {
+        String latestSeasonId = GeneralUtil.getResponse(pubgInterface.getSeasons(shard.toString()))
+                .getDate().stream()
+                .filter(season -> season.getAttributes().isCurrentSeason())
+                .findFirst().orElse(null).getId();
+
+        return GeneralUtil.getResponse(pubgInterface.getPlayerSeason(shard.toString(), playerId, latestSeasonId));
     }
 
 }

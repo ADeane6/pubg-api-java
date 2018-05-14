@@ -3,7 +3,7 @@ package me.adeane6.samples;
 import me.adeane6.PUBGApi;
 import me.adeane6.model.ApiStatus;
 import me.adeane6.model.Shard;
-import me.adeane6.model.match.MatchWrapper;
+import me.adeane6.model.match.Match;
 import me.adeane6.model.participant.Participant;
 import me.adeane6.model.player.Player;
 
@@ -25,7 +25,7 @@ public class ClientSample {
 
         for (String matchId : player.getMatchsIds()) {
             System.out.println("Match: " + matchId);
-            MatchWrapper matchWrapper = pubgApi.getMatch(Shard.PC_NA, matchId);
+            Match matchWrapper = pubgApi.getMatch(Shard.PC_NA, matchId);
             Participant participant = matchWrapper.getParticipants().stream()
                     .filter(p ->  p.getAttributes().getStats().getName()
                             .equals(player.getAttributes().getName()))
