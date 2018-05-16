@@ -6,6 +6,7 @@ import me.adeane6.model.Telemetry.Event.EventBase;
 import me.adeane6.model.Telemetry.Telemetry;
 import me.adeane6.model.match.Match;
 import me.adeane6.model.player.Player;
+import me.adeane6.model.playerseason.PlayerSeason;
 import me.adeane6.model.season.Season;
 import me.adeane6.model.status.Status;
 import me.adeane6.model.wrapper.Data;
@@ -13,7 +14,6 @@ import me.adeane6.model.wrapper.ResponseData;
 import me.adeane6.model.wrapper.ResponseDataList;
 import me.adeane6.util.GeneralUtil;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -67,10 +67,9 @@ public class PUBGApi {
         return GeneralUtil.getResponse(pubgInterface.getSeasons(shard.toString()));
     }
 
-    public ResponseData<Season> getLatestSeasonForPlayer(Shard shard, String playerId) {
-        String latestSeasonId = GeneralUtil.getResponse(pubgInterface.getSeasons(shard.toString()))
-                .getDate().stream()
-                .filter(season -> season.getAttributes().isCurrentSeason())
+    public ResponseData<PlayerSeason> getLatestSeasonForPlayer(Shard shard, String playerId) {
+        String latestSeasonId = GeneralUtil.getResponse(pubgInterface.getSeasons(shard.toString())).getData().stream()
+                .filter(season -> season.getAttributes().getIsCurrentSeason())
                 .findFirst().orElse(null).getId();
 
         return GeneralUtil.getResponse(pubgInterface.getPlayerSeason(shard.toString(), playerId, latestSeasonId));

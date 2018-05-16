@@ -23,4 +23,4 @@ hs_err_pid*
 
 # intellij
 .idea/
-pubg-api-java.iml
+/src/main/java/me/adeane6/samples/TelemetryTesting.java
